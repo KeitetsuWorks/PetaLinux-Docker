@@ -11,6 +11,6 @@
 ##
 
 docker build \
-    --tag keitetsu/petalinux:ubuntu16.04-base \
+    --tag keitetsu/petalinux:ubuntu18.04-base \
     .
 

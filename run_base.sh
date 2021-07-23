@@ -27,4 +27,4 @@ docker run \
     --env HOST_GID=$(id -g ${USER}) \
     --volume /tmp/.X11-unix:/tmp/.X11-unix:rw \
     --volume /data1/Software/Xilinx:/data \
-    keitetsu/petalinux:ubuntu16.04-base
+    keitetsu/petalinux:ubuntu18.04-base

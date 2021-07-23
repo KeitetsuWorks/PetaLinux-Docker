@@ -8,7 +8,7 @@
 ##              This software is released under the MIT License.
 ##
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 LABEL maintainer="KeitetsuWorks@users.noreply.github.com"
 
@@ -16,6 +16,7 @@ LABEL maintainer="KeitetsuWorks@users.noreply.github.com"
 ## install PetaLinux dependencies
 ## http://dora.bk.tsukuba.ac.jp/~takeuchi/?%E9%9B%BB%E6%B0%97%E5%9B%9E%E8%B7%AF%2Fzynq%2FPetalinux%20%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89
 ##
+ENV DEBIAN_FRONTEND=noninteractive
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
     apt-get upgrade -y && \
@@ -23,8 +24,6 @@ RUN dpkg --add-architecture i386 && \
         tofrodos \
         iproute2 \
         gawk \
-        gcc-4.8 \
-        make \
         net-tools \
         libncurses5-dev \
         libncursesw5-dev \
@@ -69,7 +68,9 @@ RUN dpkg --add-architecture i386 && \
         sudo \
         u-boot-tools \
         vim \
-        xvfb && \
+        xvfb \
+        bc \
+        rsync && \
     apt-get clean && \
     apt-get autoclean && \
     ln -fs /bin/bash /bin/sh && \
